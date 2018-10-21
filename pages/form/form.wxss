@@ -1,0 +1,40 @@
+/* pages/form/form.wxss */
+.topbar-step{
+  
+  z-index:100;
+  width:100%;
+  top:0;
+}
+label{
+  padding: 20rpx 10rpx ;
+  font-size:14px;
+  display:block;
+}
+
+.submit-btn.van-button--primary{
+  background-color:#1d86f4;
+  border:1px solid #1d86f4;
+  position:fixed;
+  bottom:0;
+  z-index: 101;
+}
+
+page{
+  height:100%;
+}
+.scroll-view{
+  height:1000rpx;
+}
+.form{
+  position:relative;
+  display:block;
+  margin-bottom:160rpx;
+ 
+
+  width:100%;
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}

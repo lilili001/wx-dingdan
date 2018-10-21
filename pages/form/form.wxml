@@ -1,0 +1,282 @@
+<view class="topbar-step">
+    <van-steps
+            steps="{{ steps }}"
+            active="{{ active }}"
+            active-color="{{stepActiveColor}}"
+            custom-class="{{stepCustomClass}}"
+    />
+</view>
+
+<scroll-view class="scroll-view" scroll-y scroll-into-view="{{scrollToView}}" >
+    <view class="form">
+        <van-cell-group id="sec-1" class="sec-1" data-index="1">
+            <label>贷款信息</label>
+            <van-field
+                    value="{{ carModel }}"
+                    required
+                    clearable
+                    label="车型"
+                    title-width="90px"
+                    is-link
+                    placeholder=""
+                    bind:click-icon="onClickIcon"
+            />
+
+            <picker  bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="picker" style="display:block;background:red;width:100%">
+                    <van-cell title="车辆类型" custom-class="van-cell--required van-cell--required" is-link
+                    >
+                        <view>{{array[index]}}</view>
+                    </van-cell>
+                </view>
+            </picker>
+
+            <van-field
+                    value="{{ insurance }}"
+                    type="number"
+                    clearable
+                    label="保险融资额"
+                    error
+                    error-message="保险融资额不得为空"
+                    placeholder=""
+                    required
+                    use-icon-slot
+            >
+                <view slot="icon">元</view>
+            </van-field>
+
+            <van-field
+                    value="{{ newCarGuidePrice }}"
+                    type="number"
+                    clearable
+                    label="新车指导价"
+                    placeholder=""
+                    required
+                    use-icon-slot
+            >
+                <view slot="icon">元</view>
+            </van-field>
+
+            <van-field
+                    value="{{ actualPrice }}"
+                    type="number"
+                    clearable
+                    label="实际销售价"
+                    placeholder=""
+                    required
+                    use-icon-slot
+            >
+                <view slot="icon">元</view>
+            </van-field>
+
+            <van-field
+                    value="{{ sfbl }}"
+                    type="text"
+                    clearable
+                    label="首付比例"
+                    placeholder=""
+                    required
+                    use-icon-slot
+            >
+                <view slot="icon">%</view>
+            </van-field>
+
+            <van-field
+                    value="{{ wfbl }}"
+                    type="text"
+                    clearable
+                    label="尾付比例"
+                    placeholder=""
+                    required
+                    use-icon-slot
+            >
+                <view slot="icon">%</view>
+            </van-field>
+
+            <van-field
+                    value="{{ sfje }}"
+                    type="text"
+                    clearable
+                    label="首付金额"
+                    placeholder=""
+                    required
+                    use-icon-slot
+            >
+                <view slot="icon">元</view>
+            </van-field>
+
+            <van-field
+                    value="{{ wfje }}"
+                    type="text"
+                    clearable
+                    label="尾付金额"
+                    placeholder=""
+                    required
+                    use-icon-slot
+            >
+                <view slot="icon">元</view>
+            </van-field>
+        </van-cell-group>
+
+        <van-cell-group id="sec-2" class="sec-2" data-index="2">
+            <label class="section-2" data-id="2" for="">客户信息</label>
+            <van-field
+                    value="{{ khlx }}"
+                    type="text"
+                    clearable
+                    label="客户类型"
+                    placeholder=""
+                    is-link
+                    required
+                    use-icon-slot
+            >
+            </van-field>
+
+            <van-field
+                    value="{{ name }}"
+                    type="text"
+                    clearable
+                    label="姓名"
+                    placeholder=""
+                    required
+                    use-icon-slot
+            >
+            </van-field>
+
+            <van-field
+                    value="{{ phone }}"
+                    type="text"
+                    clearable
+                    label="手机号码"
+                    placeholder=""
+                    required
+                    use-icon-slot
+            >
+            </van-field>
+
+            <van-field
+                    value="{{ cardType }}"
+                    type="text"
+                    clearable
+                    label="证件类型"
+                    placeholder=""
+                    required
+                    use-icon-slot
+            >
+            </van-field>
+
+            <van-field
+                    value="{{ cardId }}"
+                    type="text"
+                    clearable
+                    label="证件号码"
+                    placeholder=""
+                    required
+                    use-icon-slot
+            >
+            </van-field>
+
+            <van-field
+                    value="{{ marriage }}"
+                    type="text"
+                    clearable
+                    label="婚姻状态"
+                    placeholder=""
+                    required
+                    is-link
+                    use-icon-slot
+            >
+            </van-field>
+
+            <van-field
+                    value="{{ coname }}"
+                    type="text"
+                    clearable
+                    label="单位名称"
+                    placeholder=""
+                    required
+                    is-link
+                    use-icon-slot
+            >
+            </van-field>
+        </van-cell-group>
+
+        <van-cell-group id="sec-3"  class="sec-3" data-index="3">
+            <label for="">直系亲属信息</label>
+            <van-field
+                    value="{{ name }}"
+                    type="text"
+                    clearable
+                    label="姓名"
+                    placeholder=""
+                    required
+                    use-icon-slot
+            >
+            </van-field>
+            <van-field
+                    value="{{ phone }}"
+                    type="text"
+                    clearable
+                    label="手机号码"
+                    placeholder=""
+                    required
+                    use-icon-slot
+            >
+            </van-field>
+
+            <van-field
+                    value="{{ cardType }}"
+                    type="text"
+                    clearable
+                    label="证件类型"
+                    placeholder=""
+                    required
+                    use-icon-slot
+            >
+            </van-field>
+
+            <van-field
+                    value="{{ cardId }}"
+                    type="text"
+                    clearable
+                    label="证件号码"
+                    placeholder=""
+                    required
+                    use-icon-slot
+            >
+            </van-field>
+            <van-field
+                    value="{{ coname }}"
+                    type="text"
+                    clearable
+                    label="单位名称"
+                    placeholder=""
+                    required
+                    is-link
+                    use-icon-slot
+            >
+            </van-field>
+        </van-cell-group>
+
+        <van-cell-group id="sec-4">
+            <label for=""></label>
+            <van-cell title="担保人" title-width="90px" is-link  value="张三,李四..."/>
+            <van-cell title="联系人" title-width="90px" is-link value="张三,李四..." />
+        </van-cell-group>
+
+        <van-cell-group id="sec-5">
+            <label for=""></label>
+            <van-cell
+                    title="附件"
+                    title-width="90px"
+                    is-link
+                    value=" "
+                    arrow-direction="down"
+                    border="{{ false }}"
+                    url="/pages/dashboard/index"
+            />
+        </van-cell-group>
+    </view>
+</scroll-view>
+
+<van-button size="large" custom-class="submit-btn" type="primary">提交</van-button>
