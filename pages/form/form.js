@@ -1,4 +1,6 @@
 // pages/form/form.js
+import WxValidate from '../../assets/plugins/wx-validate/WxValidate';
+
 Page({
 
   /**
@@ -57,6 +59,62 @@ Page({
               
            })
        }
+
+      this.initValidate();
+  },
+  initValidate:function(){
+      //验证 https://github.com/skyvow/wx-extend/blob/master/docs/components/validate.md
+     //验证字段规则
+      const rules = {
+          carType:{
+              required:true
+          },
+          insurance:{
+              required: true,
+              assistance: true,
+          }
+      };
+
+      //验证字段提示,若不传则显示默认的信息
+      const messages = {
+          carType:{
+              required:"请选择车辆类型"
+          }
+      };
+
+      //创建实例对象
+      this.WxValidate = new WxValidate(rules,messages);
+      // 自定义验证规则
+      this.WxValidate.addMethod('assistance', (value, param) => {
+          return this.WxValidate.optional(value) || /^([0-9])+(\.[0-9]+)?$/.test(value)
+      }, '请输入非负数字');
+  },
+
+  changeInsurance:function(e){
+        console.log(e)
+  },
+    bindKeyInput:function(e){
+        console.log(e)
+    },
+    submitForm:function(e){
+      console.log(e.detail.value);
+      return;
+      const params = e.detail.value;
+      console.log(params);
+      console.log(this.WxValidate);
+      if (!this.WxValidate.checkForm(params)) {
+            const error = this.WxValidate.errorList[0];
+            this.showModal(error);
+            return false
+      }
+
+      return false
+    },
+  showModal:function(error) {
+        wx.showModal({
+            content: error.msg,
+            showCancel: false,
+        })
   },
 
   /**

@@ -11,6 +11,7 @@ VantComponent({
     square: Boolean,
     loading: Boolean,
     disabled: Boolean,
+    formType: String,
     type: {
       type: String,
       value: 'default'

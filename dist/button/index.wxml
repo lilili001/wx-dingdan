@@ -2,6 +2,7 @@
   id="{{ id }}"
   lang="{{ lang }}"
   class="custom-class van-button {{ classes }}"
+  form-type="{{formType}}"
   open-type="{{ openType }}"
   app-parameter="{{ appParameter }}"
   hover-stay-time="{{ hoverStayTime }}"
@@ -27,3 +28,5 @@
   />
   <slot wx:else />
 </button>
+
+

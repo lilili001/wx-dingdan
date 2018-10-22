@@ -8,7 +8,7 @@
 </view>
 
 <scroll-view class="scroll-view" scroll-y scroll-into-view="{{scrollToView}}" >
-    <view class="form">
+    <form class="form"  bindsubmit="submitForm" >
         <van-cell-group id="sec-1" class="sec-1" data-index="1">
             <label>贷款信息</label>
             <van-field
@@ -35,6 +35,9 @@
                     value="{{ insurance }}"
                     type="number"
                     clearable
+                    name="insurance"
+                    data-name="insurance"
+                    bind:change="changeInsurance"
                     label="保险融资额"
                     error
                     error-message="保险融资额不得为空"
@@ -276,7 +279,9 @@
                     url="/pages/dashboard/index"
             />
         </van-cell-group>
-    </view>
+
+         <button type="primary" form-type="submit" style="position:fixed; background:#1d86f4; bottom:0;width:100%;z-index:10">提交</button>
+    </form>
 </scroll-view>
 
-<van-button size="large" custom-class="submit-btn" type="primary">提交</van-button>
+

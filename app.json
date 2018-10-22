@@ -5,9 +5,9 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#1d86f4",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "进件管理平台",
-    "navigationBarTextStyle":"white",
+    "navigationBarTextStyle":"black",
     "backgroundColor":"#dddddd"
   }
 }
