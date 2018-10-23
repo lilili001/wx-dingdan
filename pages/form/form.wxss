@@ -1,6 +1,6 @@
 /* pages/form/form.wxss */
 .topbar-step{
-  
+  position:fixed;
   z-index:100;
   width:100%;
   top:0;
@@ -28,6 +28,7 @@ page{
 .form{
   position:relative;
   display:block;
+  margin-top:58px;
   margin-bottom:160rpx;
   width:100%;
 }

@@ -50,7 +50,7 @@
                   value="{{value}}"
                   bindchange="bindPickerChange">
       <picker-view-column>
-        <view bind:tap="onSelect" wx:for="{{actions}}" style="line-height: 50px">{{item }}</view>
+        <view bind:tap="onSelect" wx:for="{{actions}}" wx:key="{{index}}" style="line-height: 50px">{{item }}</view>
       </picker-view-column>
 
     </picker-view>

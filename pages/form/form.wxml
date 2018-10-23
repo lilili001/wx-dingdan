@@ -4,12 +4,13 @@
             active="{{ active }}"
             active-color="{{stepActiveColor}}"
             custom-class="{{stepCustomClass}}"
+            bind:tapTo="tapTo"
     />
 </view>
 
-<scroll-view class="scroll-view" scroll-y scroll-into-view="{{scrollToView}}" >
-    <form class="form"  bindsubmit="submitForm" >
-        <van-cell-group id="sec-1" class="sec-1" data-index="1">
+<view class="scroll-view"  >
+    <form class="form"  bindsubmit="submitForm"  style="{{ 'padding-bottom:'+formPaddingBottom }}rpx" >
+        <van-cell-group id="sec-1" class="sec-1" data-index="0">
             <label>贷款信息</label>
             <van-field
                     value="{{ carModel }}"
@@ -121,7 +122,7 @@
             </van-field>
         </van-cell-group>
 
-        <van-cell-group id="sec-2" class="sec-2" data-index="2">
+        <van-cell-group id="sec-2" class="sec-2" data-index="1">
             <label class="section-2" data-id="2" for="">客户信息</label>
             <van-field
                     value="{{ khlx }}"
@@ -204,7 +205,7 @@
             </van-field>
         </van-cell-group>
 
-        <van-cell-group id="sec-3"  class="sec-3" data-index="3">
+        <van-cell-group id="sec-3" >
             <label for="">直系亲属信息</label>
             <van-field
                     value="{{ name }}"
@@ -267,7 +268,7 @@
             <van-cell title="联系人" title-width="90px" is-link value="张三,李四..." />
         </van-cell-group>
 
-        <van-cell-group id="sec-5">
+        <van-cell-group id="sec-5" class="sec-3" data-index="2">
             <label for=""></label>
             <van-cell
                     title="附件"
@@ -293,7 +294,7 @@
 
         <button type="primary" form-type="submit" style="position:fixed; background:#1d86f4; bottom:0;width:100%;z-index:10">提交</button>
     </form>
-</scroll-view>
+</view>
 
 <view>
     <van-picker title="确认车型" show="{{show}}" showToolOptions="{{showToolOptions}}"  bind:close="onClose"

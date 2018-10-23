@@ -65,8 +65,6 @@ VantComponent({
     }
   },
   beforeCreate: function beforeCreate() {
-      console.log('1111');
-      console.log(this.data);
     this.focused = false;
   },
   onLoad:function(){

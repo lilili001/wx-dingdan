@@ -1,0 +1,22 @@
+<view class="custom-class van-steps van-steps--{{ direction }}">
+  <view
+    wx:for="{{ steps }}"
+    wx:key="index"
+    class="van-step van-hairline van-step--{{ direction }} {{ item.status ? 'van-step--' + item.status : '' }}"
+    style="{{ width ? 'width:' + width + 'px' : '' }}"
+    data-index="{{index}}"
+    bindtap="tapTo"
+  >
+    <view class="van-step__title" style="{{ item.status === 'finish' ? 'color: ' +  (item.cur ? curColor : activeColor) : 'color:'+(item.cur ? curColor :'') }}">
+      <view>{{ item.text }}</view>
+      <view>{{ item.desc }}</view>
+    </view>
+    <view class="van-step__circle-container">
+
+      <van-icon wx:if="{{item.status == 'finish' }}" name="checked" color="{{ item.cur ? curColor : activeColor }}" custom-class="van-step__active" />
+      <view  wx:else class="van-step__circle"  style="{{ item.cur ? 'background-color: ' + curColor : '' }}"    />
+
+    </view>
+    <view wx:if="{{ index !== steps.length - 1 }}" class="van-step__line"/>
+  </view>
+</view>
