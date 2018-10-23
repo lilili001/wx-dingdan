@@ -1,0 +1,52 @@
+<van-cell
+        icon="{{ leftIcon }}"
+        title="{{ label }}"
+        center="{{ center }}"
+        border="{{ border }}"
+        is-link="{{ isLink }}"
+        required="{{ required }}"
+        custom-style="{{ customStyle }}"
+        title-width="{{ titleWidth }}"
+        custom-class="van-field"
+>
+    <slot name="label" slot="title"/>
+    <view class="van-field__body {{ type === 'textarea' ? 'van-field__body--textarea' : '' }}">
+
+        <!--选择-->
+        <input
+                class="{{ inputClass }}"
+                type="text"
+                readonly="{{readonly}}"
+                value="{{ value }}"
+                disabled="{{ disabled || readonly }}"
+                maxlength="{{ maxlength }}"
+                placeholder="{{ placeholder }}"
+                placeholder-style="{{ placeholderStyle }}"
+                placeholder-class="{{ error ? 'van-field&#45;&#45;error' : '' }}"
+                cursor-spacing="{{ cursorSpacing }}"
+                bindtap="onTap"
+        />
+        <van-icon
+                wx:if="{{ showClear }}"
+                name="clear"
+                class="van-field__clear-root"
+                custom-class="van-field__clear"
+                bind:touchstart="onClear"
+        />
+        <view class="van-field__icon-container" wx:if="{{ icon || useIconSlot }}" bind:tap="onClickIcon">
+            <van-icon
+                    wx:if="{{ icon }}"
+                    name="{{ icon }}"
+                    custom-class="van-field__icon {{ iconClass }}"
+            />
+            <slot wx:else name="icon"/>
+        </view>
+        <view wx:if="{{ useButtonSlot }}" class="van-field__button">
+            <slot name="button"/>
+        </view>
+    </view>
+    <view wx:if="{{ errorMessage }}" class="van-field__error-message">
+        {{ errorMessage }}
+    </view>
+</van-cell>
+

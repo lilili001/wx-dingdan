@@ -31,7 +31,30 @@ Page({
       //picker
       index:0,
       array: ['美国', '中国', '巴西', '日本'],
-      scrollToView:"sec-1"
+      scrollToView:"sec-1",
+
+      //actions
+      show: false,
+      actions: [
+          {
+              name: '选项'
+          },
+          {
+              name: '分享',
+              subname: '描述信息',
+              openType: 'share'
+          },
+          {
+              loading: true
+          },
+          {
+              name: '禁用选项',
+              disabled: true
+          }
+      ],
+      showSelect: false,
+      showtest:true,
+      showToolOptions:true
   },
 
   /**
@@ -89,7 +112,9 @@ Page({
           return this.WxValidate.optional(value) || /^([0-9])+(\.[0-9]+)?$/.test(value)
       }, '请输入非负数字');
   },
-
+  onClickSelect:function(){
+        console.log('click111')
+  },
   changeInsurance:function(e){
         console.log(e)
   },
@@ -98,7 +123,6 @@ Page({
     },
     submitForm:function(e){
       console.log(e.detail.value);
-      return;
       const params = e.detail.value;
       console.log(params);
       console.log(this.WxValidate);
@@ -110,13 +134,42 @@ Page({
 
       return false
     },
+    showAction(){
+        this.setData({ show: true });
+    },
+    onClose() {
+        this.setData({ show: false });
+    },
+    onConfirm(v){
+      //获取值
+        console.log(v);
+    },
+    onClosePullUp(){
+        this.setData({
+            showSelect:false
+        });
+    },
+    onSelect(event) {
+        console.log(event.detail);
+    },
+
+    showSelect(){
+        this.setData({
+            showSelect:true
+        })
+    },
   showModal:function(error) {
         wx.showModal({
             content: error.msg,
             showCancel: false,
         })
   },
-
+  hideTest:function(e){
+    this.setData({
+      showtest:false
+    })
+      console.log(e);
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

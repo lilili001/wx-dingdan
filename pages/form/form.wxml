@@ -26,7 +26,7 @@
                 <view class="picker" style="display:block;background:red;width:100%">
                     <van-cell title="车辆类型" custom-class="van-cell--required van-cell--required" is-link
                     >
-                        <view>{{array[index]}}</view>
+                        <input value="{{array[index]}}" type="text" />
                     </van-cell>
                 </view>
             </picker>
@@ -280,8 +280,22 @@
             />
         </van-cell-group>
 
-         <button type="primary" form-type="submit" style="position:fixed; background:#1d86f4; bottom:0;width:100%;z-index:10">提交</button>
+        <!--<button bindtap="showAction">操作反馈</button>
+
+        <van-action-sheet
+                show="{{ show }}"
+                actions="{{ actions }}"
+                bind:close="onClose"
+                bind:select="onSelect"
+        />-->
+
+       <van-select bind:click="showAction" name="bankname"  inputClass="selectval" is-link label="label-select" value="selectValue"></van-select>
+
+        <button type="primary" form-type="submit" style="position:fixed; background:#1d86f4; bottom:0;width:100%;z-index:10">提交</button>
     </form>
 </scroll-view>
 
-
+<view>
+    <van-picker title="确认车型" show="{{show}}" showToolOptions="{{showToolOptions}}"  bind:close="onClose"
+                bind:select="onSelect" bind:confirm="onConfirm" actions="{{array}}" ></van-picker>
+</view>

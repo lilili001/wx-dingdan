@@ -29,9 +29,10 @@ page{
   position:relative;
   display:block;
   margin-bottom:160rpx;
- 
-
   width:100%;
+}
+.selectval.van-field__input{
+  text-align:right!important;
 }
 ::-webkit-scrollbar{
   width: 0;
