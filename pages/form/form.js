@@ -72,7 +72,7 @@ Page({
         //检查设备 如果是iphonex 则paddingbottom1000
         wx.getSystemInfo({
             success: function ( res ){
-                console.log( res );
+
                 if(res.model == 'iPhone X'){
                     _this.setData({
                         formPaddingBottom: 1000
@@ -109,9 +109,7 @@ Page({
                 windowHeight:672    // 可使用窗口的高度
                 windowWidth:414   // 可使用窗口的宽度*/
             }
-        })
-
-
+        });
 
         var arr = [1, 2, 3];
         var offsetTop = [];
@@ -130,8 +128,6 @@ Page({
                 })
             });
         }
-
-
 
         //相对当前屏幕
 
@@ -161,9 +157,7 @@ Page({
                         steps: steps
                     })
                 }
-
             });
-
         }
 
         this.initValidate();
