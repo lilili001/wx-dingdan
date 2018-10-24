@@ -271,10 +271,14 @@ Page({
             }
         });
 
-        steps[_this.data.i]['cur'] = true;
-        this.setData({
-            steps: steps
-        })
+        var timer = setTimeout(()=>{
+            steps[_this.data.i]['cur'] = true;
+            this.setData({
+                steps: steps
+            })
+            clearInterval(timer)
+        },400)
+
     },
 
     /**
