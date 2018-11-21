@@ -20,6 +20,7 @@ var uploadFile = function () {
         });
     };
 
+
     // 上传文件
     var uploadFile = function (filePath) {
         var Key = filePath.substr(filePath.lastIndexOf('/') + 1); // 这里指定上传的文件名
@@ -53,7 +54,7 @@ var uploadFile = function () {
         });
     };
 
-    // 选择文件
+        // 选择文件
     wx.chooseImage({
         count: 1, // 默认9
         sizeType: ['original'], // 可以指定是原图还是压缩图，这里默认用原图
