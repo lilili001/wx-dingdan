@@ -9,7 +9,7 @@ var TaskId;
 
 var getAuthorization = function(options, callback) {
     // 方法一、后端通过获取临时密钥给到前端，前端计算签名
-    wx.request({
+   /* wx.request({
         method: 'GET',
         url: 'http://localhost/frontend_zujian/cos-js-sdk-v5/server/sts.php', // 服务端签名，参考 server 目录下的两个签名例子
         dataType: 'json',
@@ -22,26 +22,26 @@ var getAuthorization = function(options, callback) {
                 ExpiredTime: data.expiredTime,
             });
         }
-    });
+    });*/
 
 
     // // 方法二、后端通过获取临时密钥，并计算好签名给到前端
-    // wx.request({
-    //   url: 'https://example.com/server/sts-auth.php',
-    //   data: {
-    //     method: options.Method,
-    //     pathname: options.Key,
-    //   },
-    //   dataType: 'json',
-    //   success: function(result) {
-    //     console.log(result);
-    //     var data = result.data;
-    //     callback({
-    //       Authorization: data.Authorization,
-    //       XCosSecurityToken: data.XCosSecurityToken, // 如果是临时密钥计算出来的签名，需要提供 XCosSecurityToken
-    //     });
-    //   }
-    // });
+    wx.request({
+      url: 'http://localhost/frontend_zujian/cos-js-sdk-v5/server/sts-auth.php',
+      data: {
+        method: options.Method,
+        pathname: options.Key,
+      },
+      dataType: 'json',
+      success: function(result) {
+        console.log(result);
+        var data = result.data;
+        callback({
+          Authorization: data.Authorization,
+          XCosSecurityToken: data.XCosSecurityToken, // 如果是临时密钥计算出来的签名，需要提供 XCosSecurityToken
+        });
+      }
+    });
 
     // // 方法三、前端使用固定密钥计算签名（适用于前端调试）
     // var authorization = COS.getAuthorization({
@@ -66,13 +66,13 @@ var requestCallback = function(err, data) {
     if (err && err.error) {
         wx.showModal({
             title: '返回错误',
-            content: '请求失败：' + (err.error.Message || err.error) + '；状态码：' + err.statusCode,
+            content: '请求失败：' + (err.error.Message || err.error) + '; 状态码：' + err.statusCode,
             showCancel: false
         });
     } else if (err) {
         wx.showModal({
             title: '请求出错',
-            content: '请求出错：' + err + '；状态码：' + err.statusCode,
+            content: '请求出错：' + err + '; 状态码：' + err.statusCode,
             showCancel: false
         });
     } else {
