@@ -1,0 +1,39 @@
+<!--pages/customer/license/index.wxml-->
+<view class="page">
+    <label>扫描营业执照</label>
+    <view>
+        <image style="width: 100px; height: 100px; background-color: #eeeeee;"
+               src="../../../assets/images/0.jpg"></image>
+    </view>
+    <text style="clear:both">支持类型:三证合一营业执照,工商注册号营业执照</text>
+
+    <van-cell-group>
+        <!--带出-->
+        <van-cell title="登记注册类型" label="aaa" is-link></van-cell>
+        <van-cell title="企业名称" label="宝鸡网络有限公司上海分公司"></van-cell>
+        <van-cell title="统一设会信用代码" label="33333xxxxxxxxxxx"></van-cell>
+        <van-cell title="经济类型" label=""></van-cell>
+        <van-select bind:click="showAction" is-link label="注册省市" value="{{value}}"></van-select>
+        <van-cell title="注册详细地址" label=""></van-cell>
+        <van-cell title="法人姓名" label=""></van-cell>
+        <van-cell title="注册资本" label="1000万"></van-cell>
+        <van-cell title="成立日期" label="2018-11-21"></van-cell>
+        <van-cell title="是否长期" label="" is-link></van-cell>
+        <van-cell title="证书到期日期" label="2018-11-21" is-link></van-cell>
+        <van-cell title="组织机构代码"></van-cell>
+        <van-cell title="纳税人识别号"></van-cell>
+        <van-field title="经营范围" type="textarea" autosize></van-field>
+    </van-cell-group>
+</view>
+
+<view>
+<van-picker
+        title="Picker Title"
+        show="{{showPicker}}"
+        showToolOptions="{{showToolOptions}}"
+        bind:close="onClose"
+        bind:select="onSelect"
+        bind:confirm="onConfirm"
+        actions="{{array}}"
+></van-picker>
+</view>

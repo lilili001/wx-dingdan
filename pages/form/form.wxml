@@ -14,7 +14,6 @@
             <label>贷款信息</label>
             <van-field
                     value="{{ carModel }}"
-                    required
                     clearable
                     label="车型"
                     title-width="90px"

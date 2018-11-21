@@ -1,0 +1,74 @@
+<!--pages/customer/garantees/index.wxml-->
+<view class="page" wx-if="{{garantee_type===''}}">
+    <button bindtap="fnClick" data-type="0">个人担保人</button>
+    <button bindtap="fnClick" data-type="1">企业担保人</button>
+</view>
+<!--***************************个人担保人页面**********************************************************************-->
+<van-cell-group wx-if="{{garantee_type==='0'}}">
+    <label>扫描担保人证件</label>
+    <view>
+        <image style="width: 100px; height: 100px; background-color: #eeeeee;" src="../../../assets/images/0.jpg"></image>
+    </view>
+    <van-field label="担保人姓名" value="" clearable/>
+    <van-field label="身份证号" value="" clearable/>
+    <van-field label="户籍详细地址" type="textarea" autosize value="" clearable/>
+    <van-select bind:click="showAction" is-link label="与申请人关系" value="{{value}}"></van-select>
+    <van-field label="手机号码" value="" clearable/>
+    <van-select bind:click="showAction" is-link label="婚姻状态" value="{{value}}"></van-select>
+    <van-field label="单位名称" value="" clearable/>
+    <van-field label="单位电话" value="" clearable/>
+    <van-select bind:click="showAction" is-link label="单位省市县" value="{{value}}"></van-select>
+    <van-field label="单位详细地址" type="textarea" autosize value="" clearable/>
+    <van-select bind:click="showAction" is-link label="居住地省市" value="{{value}}"></van-select>
+    <van-field label="居住地详细地址" type="textarea" autosize value="" clearable/>
+</van-cell-group>
+
+<!--********************************企业担保人页面***************************************************************-->
+<van-cell-group wx-if="{{garantee_type==='1'}}">
+    <label>扫描营业执照</label>
+    <view>
+        <image style="width: 100px; height: 100px; background-color: #eeeeee;" src="../../../assets/images/0.jpg"></image>
+    </view>
+    <view>
+        <text style="clear:both">支持类型:三证合一营业执照,工商注册号营业执照</text>
+    </view>
+    <!--带出-->
+    <van-cell title="与申请人关系" label="朋友" is-link></van-cell>
+    <van-cell title="登记注册类型" label="aaa" is-link></van-cell>
+    <van-cell title="企业名称" label="宝鸡网络有限公司上海分公司"></van-cell>
+    <van-cell title="统一设会信用代码" label="33333xxxxxxxxxxx"></van-cell>
+    <van-cell title="经济类型" label=""></van-cell>
+    <van-select bind:click="showAction" is-link label="注册省市" value="{{value}}"></van-select>
+    <van-cell title="注册详细地址" label=""></van-cell>
+
+    <!--手填-->
+    <van-field label="法人身份证号" value="" clearable/>
+    <van-field label="企业联系电话" value="" clearable/>
+    <van-select bind:click="showAction" is-link label="企业性质" value="{{value}}"></van-select>
+
+    <van-cell title="注册资本" label="1000万"></van-cell>
+    <van-cell title="成立日期" label="2018-11-21"></van-cell>
+    <van-cell title="是否长期" label="" is-link></van-cell>
+    <van-cell title="证书到期日期" label="2018-11-21" is-link></van-cell>
+    <van-cell title="组织机构代码"></van-cell>
+    <van-cell title="纳税人识别号"></van-cell>
+    <van-field title="经营范围" type="textarea" autosize></van-field>
+
+    <van-field label="实际控制人姓名" value="" clearable/>
+    <van-field label="身份证号" value="" clearable/>
+    <van-field label="联系方式" value="" clearable/>
+
+</van-cell-group>
+
+        <!--选择器picker-->
+<view>
+<van-picker
+        title="Picker Title"
+        show="{{showPicker}}"
+        showToolOptions="{{showToolOptions}}"
+        bind:close="onClose"
+        bind:select="onSelect"
+        bind:confirm="onConfirm"
+        actions="{{array}}"
+></van-picker>
+</view>

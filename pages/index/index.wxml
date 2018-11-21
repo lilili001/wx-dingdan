@@ -13,5 +13,4 @@
   <view class="list">
         <button type="primary" class="button" bindtap="simpleUpload">简单上传</button>
     </view>
-
 </view>

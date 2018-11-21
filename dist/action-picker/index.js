@@ -26,8 +26,9 @@ VantComponent({
   },
   methods: {
     onSelect: function onSelect(event) {
+
       var index = event.currentTarget.dataset.index;
-      console.log(index);
+
       var item = this.data.actions[index];
 
       if (item && !item.disabled && !item.loading) {

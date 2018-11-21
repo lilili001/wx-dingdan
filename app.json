@@ -1,7 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/form/form"  
+    "pages/form/form",
+    "pages/customer/applier/index",
+    "pages/customer/contacts/index",
+    "pages/customer/garantees/index",
+    "pages/customer/license/index",
+    "pages/customer/enterprise/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

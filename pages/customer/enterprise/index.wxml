@@ -1,0 +1,33 @@
+<view class="page">
+    <van-cell-group>
+        <van-field label="法人姓名" value="{{ value }}" clearable />
+        <van-field label="法人身份证号" value="{{ value }}" clearable />
+        <van-field label="法人手机号" value="{{ value }}" clearable />
+        <van-field label="法人持股比例" value="{{ value }}" clearable />
+        <van-select label="组织机构类别" bind:click="showAction"  is-link  value="{{value}}"></van-select>
+        <van-select label="组织机构类别细分" bind:click="showAction"  is-link  value="{{value}}"></van-select>
+        <van-select label="企业规模" bind:click="showAction"  is-link  value="{{value}}"></van-select>
+        <van-select label="机构状态" bind:click="showAction"  is-link  value="{{value}}"></van-select>
+        <van-field label="经济行业大类" value="{{ value }}" clearable />
+        <van-field label="经济行业小类" value="{{ value }}" clearable />
+        <van-select label="经济省份城市" bind:click="showAction"  is-link  value="{{value}}"></van-select>
+        <van-field label="经营详细地址" value="{{ value }}" clearable />
+        <van-field label="企业联系电话" value="{{ value }}" clearable />
+        <van-field label="实际控制人姓名" value="{{ value }}" clearable />
+        <van-field label="身份证号" value="{{ value }}" clearable />
+        <van-field label="联系方式" value="{{ value }}" clearable />
+    </van-cell-group>
+</view>
+
+<!--**********************picker********************************-->
+<view>
+<van-picker
+        title="Picker Title"
+        show="{{showPicker}}"
+        showToolOptions="{{showToolOptions}}"
+        bind:close="onClose"
+        bind:select="onSelect"
+        bind:confirm="onConfirm"
+        actions="{{array}}"
+></van-picker>
+</view>

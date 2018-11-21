@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -46,21 +46,34 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "cos",
-					"pathName": "pages/tencent/upload",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "upload",
-					"pathName": "pages/tencent/upload",
-					"query": ""
-				},
-				{
-					"id": -1,
+					"id": 3,
 					"name": "个人-applier",
-					"pathName": "pages/customer/applier"
+					"pathName": "pages/customer/applier/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "contacts",
+					"pathName": "pages/customer/contacts/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "garantees",
+					"pathName": "pages/customer/garantees/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "license",
+					"pathName": "pages/customer/license/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "enterprise",
+					"pathName": "pages/customer/enterprise/index",
+					"query": ""
 				}
 			]
 		}
