@@ -28,8 +28,7 @@ Page({
         ],
         stepActiveColor: '#1d86f4',
         stepCustomClass: "stepCustomClass", //进度条外部样式
-
-        insurance: "10000.00",
+        insurance: "",
 
         //picker
         index: 0,
@@ -206,8 +205,11 @@ Page({
         console.log(e)
     },
     submitForm: function (e) {
+        console.log('submitForm 参数');
+        console.log(e.detail.value);
         const params = e.detail.value;
         if (!this.WxValidate.checkForm(params)) {
+            console.log(this.WxValidate.errorList )
             const error = this.WxValidate.errorList[0];
             this.showModal(error);
             return false

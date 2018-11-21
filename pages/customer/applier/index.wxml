@@ -1,26 +1,29 @@
 <!--pages/customer/applier/index.wxml-->
 <view>
-<form>
-<van-cell-group>
-  
-  <van-field value="{{ value }}" clearable label="申请人姓名" bind:change="onChange" bind:blur="onBlur"/>
-  <van-field value="{{ value }}" clearable label="身份证号" bind:change="onChange" bind:blur="onBlur"/>
-  <van-field value="{{ value }}" clearable label="手机号码" bind:change="onChange" bind:blur="onBlur"/>
-  <van-select bind:click="showAction"  is-link label="婚姻状况" value="{{value}}"></van-select>
-  <van-select bind:click="showAction"  is-link label="性别" value="{{value}}"></van-select>
-  <van-select bind:click="showAction"  is-link label="申请人学历" value="{{value}}"></van-select>
-  <van-select bind:click="showAction"  is-link label="有无房产" value="{{value}}"></van-select>
-  <van-select bind:click="showAction"  is-link label="居住状况" value="{{value}}"></van-select>
-  <van-select bind:click="showAction"  is-link label="所属行业" value="{{value}}"></van-select>
-  <van-field value="{{ value }}" clearable label="单位名称" bind:change="onChange" bind:blur="onBlur"/>
-  <van-select bind:click="showAction"  is-link label="申请人职业" value="{{value}}"></van-select>
-  <van-field value="{{ value }}" clearable label="税后年薪" bind:change="onChange" bind:blur="onBlur"/>
-  <van-select bind:click="showAction"  is-link label="单位省市县" value="{{value}}"></van-select>
-  <van-field value="{{ value }}" clearable label="单位详细地址" bind:change="onChange" bind:blur="onBlur"/>
-  <van-select bind:click="showAction"  is-link label="住址省市县" value="{{value}}"></van-select>
-  <van-field value="{{ value }}" clearable label="住址详细地址" bind:change="onChange" bind:blur="onBlur"/>
-</van-cell-group>
-</form>
+    <form bindsubmit="submitForm">
+        <van-cell-group>
+
+            <van-field value="{{ value }}" clearable label="申请人姓名" bind:blur="onBlur"/>
+            <van-field value="{{ value }}" clearable label="身份证号" bind:blur="onBlur"/>
+            <van-field value="{{ value }}" clearable label="手机号码" bind:blur="onBlur"/>
+            <van-select bind:click="showAction" is-link label="婚姻状况" value="{{value}}"></van-select>
+            <van-select bind:click="showAction" is-link label="性别" value="{{value}}"></van-select>
+            <van-select bind:click="showAction" is-link label="申请人学历" value="{{value}}"></van-select>
+            <van-select bind:click="showAction" is-link label="有无房产" value="{{value}}"></van-select>
+            <van-select bind:click="showAction" is-link label="居住状况" value="{{value}}"></van-select>
+            <van-select bind:click="showAction" is-link label="所属行业" value="{{value}}"></van-select>
+            <van-field value="{{ value }}" clearable label="单位名称" bind:blur="onBlur"/>
+            <van-select bind:click="showAction" is-link label="申请人职业" value="{{value}}"></van-select>
+            <van-field value="{{ value }}" clearable label="税后年薪" bind:blur="onBlur"/>
+            <van-select bind:click="showAction" is-link label="单位省市县" value="{{value}}"></van-select>
+            <van-field value="{{ value }}" clearable label="单位详细地址" bind:blur="onBlur"/>
+            <van-select bind:click="showAction" is-link label="住址省市县" value="{{value}}"></van-select>
+            <van-field value="{{ value }}" clearable label="住址详细地址" bind:blur="onBlur"/>
+        </van-cell-group>
+
+        <button type="primary" form-type="submit">提交</button>
+
+    </form>
 </view>
 
 <view>
@@ -29,8 +32,8 @@
         show="{{showPicker}}"
         showToolOptions="{{showToolOptions}}"
         bind:close="onClose"
-        bind:select="onSelect"
         bind:confirm="onConfirm"
+        bind:pickerViewChange="onPickerViewChange"
         actions="{{array}}"
 ></van-picker>
 </view>

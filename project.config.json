@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -73,6 +73,12 @@
 					"id": -1,
 					"name": "enterprise",
 					"pathName": "pages/customer/enterprise/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "uploader",
+					"pathName": "pages/upload/index",
 					"query": ""
 				}
 			]

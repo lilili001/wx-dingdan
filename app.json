@@ -6,7 +6,8 @@
     "pages/customer/contacts/index",
     "pages/customer/garantees/index",
     "pages/customer/license/index",
-    "pages/customer/enterprise/index"
+    "pages/customer/enterprise/index",
+    "pages/upload/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
