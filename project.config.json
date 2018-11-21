@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -37,12 +37,30 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
 					"name": "form",
-					"pathName": "pages/form/form"
+					"pathName": "pages/form/form",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cos",
+					"pathName": "pages/tencent/upload",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "upload",
+					"pathName": "pages/tencent/upload",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人-applier",
+					"pathName": "pages/customer/applier"
 				}
 			]
 		}

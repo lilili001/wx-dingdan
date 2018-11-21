@@ -1,13 +1,13 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/form/form"
+    "pages/form/form"  
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1d86f4",
     "navigationBarTitleText": "进件管理平台",
-    "navigationBarTextStyle":"white",
-    "backgroundColor":"#dddddd"
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#dddddd"
   }
 }

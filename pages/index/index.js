@@ -10,12 +10,22 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
+  /*
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
+  */
   onLoad: function () {
+    /*
+    wx.chooseImage({
+      success(res) {
+        console.log(res.tempFiles[0]);  
+      }
+    })
+    */
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -32,7 +42,7 @@ Page({
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
+      wx.getUserInfo({ 
         success: res => {
           app.globalData.userInfo = res.userInfo
           this.setData({

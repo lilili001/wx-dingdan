@@ -13,7 +13,8 @@ Page({
             {
                 //text: '步骤一',
                 desc: '贷款信息',
-                cur: true
+                cur: true,
+                status:"finish"
             },
             {
                 //text: '步骤二',
