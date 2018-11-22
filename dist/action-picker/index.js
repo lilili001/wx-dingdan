@@ -15,6 +15,9 @@ VantComponent({
             type: Array,
             value: []
         },
+        itemKey:{
+            type:String
+        },
         overlay: {
             type: Boolean,
             value: true

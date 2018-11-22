@@ -9,11 +9,10 @@
             <van-field value="{{ tel }}" clearable label="tel" name="tel" bind:blur="onBlur"/>
             <van-field value="{{ idcard }}" clearable label="idcard" name="idcard" bind:blur="onBlur"/>
 
-
             <van-field value="{{ value }}" clearable label="申请人姓名" bind:blur="onBlur"/>
             <van-field value="{{ value }}" clearable label="身份证号" bind:blur="onBlur"/>
             <van-field value="{{ value }}" clearable label="手机号码" bind:blur="onBlur"/>
-            <van-select bind:click="showAction" is-link label="婚姻状况" value="{{value}}"></van-select>
+            <van-select bind:click="showAction" data-itemKey="name" data-name="is_marriad" is-link label="婚姻状况" value="{{formData.is_marriad}}"></van-select>
             <van-select bind:click="showAction" is-link label="性别" value="{{value}}"></van-select>
             <van-select bind:click="showAction" is-link label="申请人学历" value="{{value}}"></van-select>
             <van-select bind:click="showAction" is-link label="有无房产" value="{{value}}"></van-select>
@@ -38,6 +37,7 @@
         title="Picker Title"
         show="{{showPicker}}"
         showToolOptions="{{showToolOptions}}"
+        itemKey="{{itemKey}}"
         bind:close="onClose"
         bind:confirm="onConfirm"
         bind:pickerViewChange="onPickerViewChange"

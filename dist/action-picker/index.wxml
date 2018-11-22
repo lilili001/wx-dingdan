@@ -34,11 +34,10 @@
                 value="{{value}}"
                 bindchange="bindchange">
             <picker-view-column>
-                <view wx:for="{{actions}}" wx:key="{{index}}" style="line-height: 40px;text-align:center;font-size:12px;">{{item }}</view>
+                <view wx:for="{{actions}}" wx:key="{{index}}" style="line-height: 40px;text-align:center;font-size:12px;">{{ !!(item[itemKey]) ? item[itemKey] : item }}</view>
             </picker-view-column>
         </picker-view>
     </view>
-
 
     <view
             wx:if="{{ cancelText }}"

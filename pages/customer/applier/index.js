@@ -1,6 +1,5 @@
 import WxValidate from '../../../assets/plugins/wx-validate/WxValidate';
 
-
 Page({
     /**
      * 页面的初始数据
@@ -8,6 +7,22 @@ Page({
     data: {
         value: "",
         array: ['美国', '中国', '巴西', '日本'],
+        dict:{
+            is_marriad:[
+              {name:"已婚",value:1},
+              {name:"未婚",value:0}
+          ]
+        },
+        itemKey:"",
+        curSelectItemName:"",
+
+        formDataObj:{
+
+        },
+        formData:{
+           is_marriad : ""
+        },
+
         showPicker: false,//初始化是否显示picker
         showToolOptions: true ,// 是否显示picker的 确认取消
         
@@ -54,7 +69,10 @@ Page({
     //显示picker选择器
     showAction(event) {
         console.log("picker 显示事件");
-        //this.setData({array:['apple','pear']})
+        console.log(event);
+        this.setData({array:this.data.dict.is_marriad});
+        this.setData({itemKey:  event.currentTarget.dataset.itemkey  });
+        this.setData({curSelectItemName:  event.currentTarget.dataset.name  });
         this.setData({showPicker: true});
     },
     //picker 选择器关闭事件
@@ -65,9 +83,20 @@ Page({
     //picker 选择器确认事件
     onConfirm(event) {
         //获取值
+
         console.log("picker confirm 事件",event.detail);
-        this.setData({value: this.data.array[event.detail]})
-        //this.setData({value:v})
+        var key = this.data.curSelectItemName;
+        var formDataKey = "formData."+key;
+        var formDataObjKey = "formDataObj."+key;
+
+        var dict = "dict."+key;
+
+        this.setData({
+            [formDataObjKey] : this.data.dict[key][event.detail]
+        });
+
+       //console.log( this.data.dict )
+        this.setData({ [formDataKey] : this.data.dict[key][event.detail]['name'] });//setData 使用变量
         this.setData({showPicker: false});
     },
     //picker view 滚动了 值也改变了
