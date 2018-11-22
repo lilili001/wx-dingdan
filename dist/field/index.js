@@ -83,9 +83,13 @@ VantComponent({
         showClear: this.getShowClear()
       });
     },
-    onBlur: function onBlur() {
+    onBlur: function onBlur(event) {
+        var _ref = event.detail || {},
+            _ref$value = _ref.value,
+            value = _ref$value === void 0 ? '' : _ref$value;
+
       this.focused = false;
-      this.$emit('blur');
+      this.$emit('blur',value);
       this.setData({
         showClear: this.getShowClear()
       });

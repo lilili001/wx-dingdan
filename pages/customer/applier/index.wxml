@@ -3,6 +3,13 @@
     <form bindsubmit="submitForm">
         <van-cell-group>
 
+            <input type="text" bind:blur="onBlur" placeholder="test"/>
+
+            <van-field data-name="email" value="{{ email }}" clearable label="email" name="email" bind:blur="onBlur"/>
+            <van-field value="{{ tel }}" clearable label="tel" name="tel" bind:blur="onBlur"/>
+            <van-field value="{{ idcard }}" clearable label="idcard" name="idcard" bind:blur="onBlur"/>
+
+
             <van-field value="{{ value }}" clearable label="申请人姓名" bind:blur="onBlur"/>
             <van-field value="{{ value }}" clearable label="身份证号" bind:blur="onBlur"/>
             <van-field value="{{ value }}" clearable label="手机号码" bind:blur="onBlur"/>

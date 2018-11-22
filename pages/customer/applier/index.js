@@ -1,4 +1,6 @@
-// pages/customer/applier/index.js
+import WxValidate from '../../../assets/plugins/wx-validate/WxValidate';
+
+
 Page({
     /**
      * 页面的初始数据
@@ -8,6 +10,46 @@ Page({
         array: ['美国', '中国', '巴西', '日本'],
         showPicker: false,//初始化是否显示picker
         showToolOptions: true ,// 是否显示picker的 确认取消
+        
+        email:"",
+        tel:"",
+        idcard:""
+    },
+    onLoad(){
+        // 验证字段的规则
+        const rules = {
+            email: {
+                required: true,
+                email: true,
+            },
+            tel: {
+                required: true,
+                tel: true,
+            },
+            idcard: {
+                required: true,
+                idcard: true,
+            },
+        }
+
+        // 验证字段的提示信息，若不传则调用默认的信息
+        const messages = {
+            email: {
+                required: '请输入邮箱',
+                email: '请输入正确的邮箱',
+            },
+            tel: {
+                required: '请输入手机号',
+                tel: '请输入正确的手机号',
+            },
+            idcard: {
+                required: '请输入身份证号码',
+                idcard: '请输入正确的身份证号码',
+            },
+        }
+
+        this.WxValidate = new WxValidate(rules, messages)
+
     },
     //显示picker选择器
     showAction(event) {
@@ -35,8 +77,26 @@ Page({
     },
     onBlur(event) {
         console.log("输入框 onBlur事件")
+        console.log(event)
+        var params = {};
+        var key = event.currentTarget.dataset.name;
+        var val = event.detail;
+        params[key] = val;
+
+        if (!this.WxValidate.checkForm(params)) {
+            console.log(this.WxValidate.errorList )
+            const error = this.WxValidate.errorList[0];
+            this.showModal(error);
+            return false
+        }
+    },
+    showModal: function (error) {
+        wx.showModal({
+            content: error.msg,
+            showCancel: false,
+        })
     },
     submitForm(e){
-        console.log(e.detail)
+        console.log(e.detail.value)
     }
 })
